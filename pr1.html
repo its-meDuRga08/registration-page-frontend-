@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION PAGE</title>
+</head>
+<body>
+    <center>
+        <h1>REGISTRATION PAGE</h1>
+        <table border="2" style="background-color: rgb(92, 221, 241);">
+            <tr>
+                <td>
+                    <h3>Name :</h3>
+                </td>
+                <td>
+                    <input type="text" placeholder="full-name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>DOB :</h3>
+                </td>
+                <td>
+                    <input type="date" required>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Course : </h3></td>
+                <td>
+                    <label><input type="checkbox" class="single-select" name="opt"> BCA</label>
+                    <label><input type="checkbox" class="single-select" name="opt"> Btech</label>
+                    <label><input type="checkbox" class="single-select" name="opt"> BSc</label>
+
+
+                    <script>
+                     // Saare checkboxes ko select karo
+                         const checkboxes = document.querySelectorAll('.single-select');
+
+                        checkboxes.forEach((cb) => {
+                            cb.addEventListener('click', function() {
+                            // Jab ek click ho, baaki sabko uncheck kar do
+                        checkboxes.forEach((box) => {
+                            if (box !== this) box.checked = false;
+                             });
+                           });
+                        });
+                    </script>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <h3>Gender :</h3>
+                </td>
+                <td>
+                    <input type="radio" id="Female" name="gender" value="Female">
+                    <label for="Female">Female</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Ph No. :</h3></td>
+                <td>
+                    <!-- Country Code Dropdown -->
+                    <select name="countryCode" >
+                        <option value="+91" selected>🇮🇳 +91</option>
+                        <option value="+81">🇯🇵 +81</option>
+                        <option value="+67">🇳🇫 +67</option>
+                        <option value="+1">🇺🇸 +1</option>
+                    </select>
+
+                    <!-- Phone Number Input -->
+                    <input type="tel"  oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="Enter number" maxlength="10">
+
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Email id :</h3></td>
+                <td>
+                    <input type="email" placeholder="example@gmail.com" required>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Password :</h3></td>
+                <td>
+                    <input type="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Address :</h3></td>
+                <td>
+                    <textarea name="address" rows="4" cols="40" style="display: block;" placeholder="enter address"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Image :</h3></td>
+                <td>
+                    <input type="image" placeholder="add file" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" style="padding: 15px;">
+                    <button type="submit" style="padding: 5px 15px; cursor: pointer;">
+                        Register
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
